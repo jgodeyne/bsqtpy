@@ -1,7 +1,7 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout
-from PyQt5.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QMessageBox
-from PyQt5.QtGui import QFont
-from PyQt5.QtCore import Qt
+from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout
+from PyQt6.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QMessageBox
+from PyQt6.QtGui import QFont
+from PyQt6.QtCore import Qt
 from startmatchform import StartMatchDialog
 from matchplayer import MatchPlayer
 from match import Match

@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QDialog, QLabel, QLineEdit, QFormLayout, QVBoxLayout, QDialogButtonBox, QHBoxLayout, QGroupBox
-from PyQt5.QtGui import QRegExpValidator
-from PyQt5.QtCore import QRegExp
+from PyQt6.QtWidgets import QDialog, QLabel, QLineEdit, QFormLayout, QVBoxLayout, QDialogButtonBox, QHBoxLayout, QGroupBox
+from PyQt6.QtGui import QRegularExpressionValidator
+from PyQt6.QtCore import QRegularExpression
 from disciplineWidget import DisciplineWidget
 
 class StartMatchDialog(QDialog):
@@ -12,25 +12,25 @@ class StartMatchDialog(QDialog):
         # Maak de tekstvelden voor het invoeren van naam, club of team, discipline en te maken punten voor twee spelers.
         self.name1 = QLineEdit()
         self.name1.setMaxLength(25)
-        self.name1.setValidator(QRegExpValidator(QRegExp("[a-zA-Z0-9 ]+"), self.name1))
+        self.name1.setValidator(QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9 ]+"), self.name1))
         self.club1 = QLineEdit()
         self.club1.setMaxLength(25)
-        self.club1.setValidator(QRegExpValidator(QRegExp("[a-zA-Z0-9 ]+"), self.club1))
+        self.club1.setValidator(QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9 ]+"), self.club1))
         self.discipline1 = DisciplineWidget()
         self.points1 = QLineEdit()
         self.points1.setMaxLength(3)
-        self.points1.setValidator(QRegExpValidator(QRegExp("[0-9]+"), self.points1))
+        self.points1.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9]+"), self.points1))
 
         self.name2 = QLineEdit()
         self.name2.setMaxLength(25)
-        self.name2.setValidator(QRegExpValidator(QRegExp("[a-zA-Z0-9 ]+"), self.name2))
+        self.name2.setValidator(QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9 ]+"), self.name2))
         self.club2 = QLineEdit()
         self.club2.setMaxLength(25)
-        self.club2.setValidator(QRegExpValidator(QRegExp("[a-zA-Z0-9 ]+"), self.club2))
+        self.club2.setValidator(QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9 ]+"), self.club2))
         self.discipline2 = DisciplineWidget()
         self.points2 = QLineEdit()
         self.points2.setMaxLength(3)
-        self.points2.setValidator(QRegExpValidator(QRegExp("[0-9]+"), self.points2))
+        self.points2.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9]+"), self.points2))
 
         # Maak de labels voor elk van de tekstvelden.
         speler1Label = QLabel("Speler 1")
@@ -65,7 +65,7 @@ class StartMatchDialog(QDialog):
         formLayout2.addRow(pointsLabel2, self.points2)
 
         # Maak een knop en voeg deze toe aan een horizontale layout.
-        QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Close
+        QBtn = QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Close
 
         buttonBox = QDialogButtonBox(QBtn)
         buttonBox.accepted.connect(self.accept)
